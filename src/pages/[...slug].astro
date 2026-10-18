@@ -1,0 +1,128 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+export function getStaticPaths() {
+  return site.pages.map(p => ({ params: { slug: p.slug || undefined }, props: { page: p } }));
+}
+const { page } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const href = slug => `${base}/${slug ? slug + '/' : ''}`;
+const posts = [...(site.posts || [])].sort((a, b) => String(b.date).localeCompare(String(a.date)));
+const fmt = d => { try { return new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }); } catch { return d; } };
+const kind = page.kind;
+const ex = page.example;
+---
+<Base title={page.slug ? page.title : site.name} description={page.description} slug={page.slug} noindex={page.placement === 'hidden'}>
+  <section class={`hero hero-${kind}`}>
+    <div class={`wrap ${ex ? 'hero-split' : ''}`}>
+      <div class="hero-copy">
+        {page.eyebrow && <p class="eyebrow">{page.eyebrow}</p>}
+        <h1>{page.headline || page.title}</h1>
+        {page.lede && <p class="lede">{page.lede}</p>}
+        {page.cta && <p class="actions"><a class="btn" href={href(page.cta.slug)}>{page.cta.label}</a>{page.cta2 && <a class="btn btn-ghost" href={href(page.cta2.slug)}>{page.cta2.label}</a>}</p>}
+      </div>
+      {ex && (
+        <aside class="example" aria-label={ex.note}>
+          <p class="example-note">{ex.note}</p>
+          <h2>{ex.title}</h2>
+          <dl>
+            {ex.rows.map(r => <div><dt>{r.k}</dt><dd>{r.v}</dd></div>)}
+          </dl>
+          {ex.button && <button class="btn" type="button" disabled>{ex.button}</button>}
+        </aside>
+      )}
+    </div>
+  </section>
+
+  {page.stats && page.stats.length > 0 && (
+    <section class="stats"><div class="wrap stats-in">
+      {page.stats.map(s => <div class="stat-row"><p class="stat">{s.value}</p><p class="stat-label">{s.label}</p></div>)}
+    </div></section>
+  )}
+
+  {page.body && page.body.length > 0 && (
+    <section class="block"><div class="wrap prose">
+      {page.body.map(p => <p>{p}</p>)}
+    </div></section>
+  )}
+
+  {page.items && page.items.length > 0 && (
+    <section class="block"><div class="wrap">
+      {page.itemsTitle && <h2 class="section-title">{page.itemsTitle}</h2>}
+      <div class={`grid grid-${kind}`}>
+        {page.items.map((it, i) => (
+          <article class="card">
+            <p class="num">{String(i + 1).padStart(2, '0')}</p>
+            <h3>{it.title}</h3>
+            {it.meta && <p class="meta">{it.meta}</p>}
+            <p>{it.text}</p>
+          </article>
+        ))}
+      </div>
+    </div></section>
+  )}
+
+  {page.strip && (
+    <section class="block"><div class="wrap">
+      <h2 class="section-title">{page.strip.title}</h2>
+      <ul class="strip">{page.strip.lines.map(l => <li>{l}</li>)}</ul>
+    </div></section>
+  )}
+
+  {kind === 'home' && posts.length > 0 && (
+    <section class="block"><div class="wrap">
+      <h2 class="section-title">Latest writing</h2>
+      <ul class="posts">
+        {posts.slice(0, 3).map(p => <li><a href={`${href('blog')}${p.slug}/`}><span class="muted small">{fmt(p.date)}</span><strong>{p.title}</strong><span>{p.summary}</span></a></li>)}
+      </ul>
+    </div></section>
+  )}
+
+  {kind === 'blog' && (
+    <section class="block"><div class="wrap">
+      <ul class="posts">
+        {posts.map(p => <li><a href={`${href('blog')}${p.slug}/`}><span class="muted small">{fmt(p.date)}</span><strong>{p.title}</strong><span>{p.summary}</span></a></li>)}
+      </ul>
+    </div></section>
+  )}
+
+  {kind === 'contact' && (
+    <section class="block"><div class="wrap contact">
+      <div>
+        {site.contact?.email && <p><span class="label">Email</span><a class="tap" href={`mailto:${site.contact.email}`}>{site.contact.email}</a></p>}
+        {site.contact?.phone && <p><span class="label">Phone</span><a class="tap" href={`tel:${site.contact.phone.replace(/[^+\d]/g, '')}`}>{site.contact.phone}</a></p>}
+        {site.contact?.address && <p><span class="label">Where</span>{site.contact.address}</p>}
+        {site.contact?.hours && <p><span class="label">Hours</span>{site.contact.hours}</p>}
+      </div>
+      {site.contact?.email && (
+        <form class="form" id="contact-form" action={`mailto:${site.contact.email}`} method="get" data-to={site.contact.email}>
+          <label>Your name<input name="name" autocomplete="name" required /></label>
+          <label>Your email<input name="email" type="email" autocomplete="email" required /></label>
+          <label>How can we help?<textarea name="body" rows="5" required aria-describedby="help-hint"></textarea><span class="hint" id="help-hint">A few lines is enough.</span></label>
+          <button class="btn" type="submit">Send message</button>
+          <p class="hint" id="form-note" role="status">Your email app will open with the message ready to send. If it does not, write to <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>
+        </form>
+      )}
+    </div></section>
+  )}
+
+  {page.closing && (
+    <section class="closing"><div class="wrap">
+      <h2>{page.closing.headline}</h2>
+      {page.closing.text && <p class="lede">{page.closing.text}</p>}
+      <p class="actions"><a class="btn" href={href(page.closing.slug)}>{page.closing.label}</a></p>
+    </div></section>
+  )}
+</Base>
+<script is:inline>
+  (function () {
+    var f = document.getElementById('contact-form'); if (!f) return;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var d = new FormData(f), name = String(d.get('name') || ''), from = String(d.get('email') || ''), msg = String(d.get('body') || '');
+      var body = msg + '\n\n' + name + '\n' + from;
+      window.location.href = 'mailto:' + f.getAttribute('data-to') + '?subject=' + encodeURIComponent('Message from ' + name) + '&body=' + encodeURIComponent(body);
+      var n = document.getElementById('form-note'); if (n) n.classList.add('shown');
+    });
+  })();
+</script>

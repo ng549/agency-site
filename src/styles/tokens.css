@@ -1,0 +1,16 @@
+:root {
+  --c-bg: #f6f4ee;
+  --c-text: #14201b;
+  --c-accent: #0a7d4d;
+  --c-accent-ink: #ffffff;
+  --c-accent-text: #0a7d4d;
+  --c-muted: color-mix(in srgb, #14201b 68%, #f6f4ee);
+  --c-line: color-mix(in srgb, #14201b 14%, #f6f4ee);
+  --c-surface: color-mix(in srgb, #14201b 4%, #f6f4ee);
+  --c-ink: #14201b;
+  --c-ink-text: #f6f4ee;
+  --f-head: Newsreader, "Iowan Old Style", Georgia, Georgia, serif;
+  --f-body: Inter, "Segoe UI", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --w-head: 600;
+  --radius: 6px;
+}

@@ -1,0 +1,282 @@
+{
+  "name": "The Agency",
+  "tagline": "We solve the problem. You get a clear answer.",
+  "description": "The Agency helps small businesses get a website, videos and photos made without the jargon and without the big bill.",
+  "nav": [
+    {
+      "slug": "about",
+      "title": "About"
+    },
+    {
+      "slug": "services",
+      "title": "Services"
+    },
+    {
+      "slug": "blog",
+      "title": "Writing"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact"
+    }
+  ],
+  "footer": [
+    {
+      "slug": "about",
+      "title": "About"
+    },
+    {
+      "slug": "services",
+      "title": "Services"
+    },
+    {
+      "slug": "blog",
+      "title": "Writing"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy"
+    }
+  ],
+  "cta": {
+    "slug": "contact",
+    "label": "Get in touch"
+  },
+  "contact": {
+    "email": "hello@moremarginco.com"
+  },
+  "pages": [
+    {
+      "slug": "",
+      "kind": "home",
+      "placement": "nav",
+      "title": "Home",
+      "description": "The Agency helps small businesses get a website, videos and photos made, explained in plain words and kept economical.",
+      "example": {
+        "note": "Example, not a real client",
+        "title": "Example: a first website",
+        "rows": [
+          {
+            "k": "What you get",
+            "v": "Five pages, written and designed with you"
+          },
+          {
+            "k": "When",
+            "v": "A date, agreed before we start"
+          },
+          {
+            "k": "Price",
+            "v": "Shown before you say yes"
+          }
+        ],
+        "button": "Say yes"
+      },
+      "eyebrow": "For small businesses",
+      "headline": "Tell us the problem. We will fix it.",
+      "lede": "A website, a video, a set of photos. We make it, explain it in plain words, and keep the cost low.",
+      "itemsTitle": "How it goes",
+      "items": [
+        {
+          "title": "You tell us",
+          "text": "Write or talk to us about what is not working. A few lines is enough."
+        },
+        {
+          "title": "We quote it",
+          "text": "You get what we will make, the date, and the price. Nothing starts until you say yes."
+        },
+        {
+          "title": "We make it",
+          "text": "You see each version and tell us what to change."
+        },
+        {
+          "title": "You approve it",
+          "text": "When you are happy, it goes live or into your hands."
+        }
+      ],
+      "stats": [
+        {
+          "value": "Solve",
+          "label": "the problem you have"
+        },
+        {
+          "value": "Explain",
+          "label": "it in plain words"
+        },
+        {
+          "value": "Keep",
+          "label": "the cost low"
+        }
+      ],
+      "cta": {
+        "label": "Tell us what you need",
+        "slug": "contact"
+      },
+      "cta2": {
+        "label": "See what we do",
+        "slug": "services"
+      },
+      "closing": {
+        "headline": "Have something that needs fixing?",
+        "text": "Send us a few lines. We will tell you what we would do and what it costs.",
+        "label": "Contact us",
+        "slug": "contact"
+      }
+    },
+    {
+      "slug": "about",
+      "kind": "about",
+      "placement": "nav",
+      "title": "About",
+      "description": "Why The Agency exists: so a small business can get good work done without learning a new tool.",
+      "eyebrow": "About",
+      "headline": "Built for people who run a business, not a computer.",
+      "lede": "The Agency exists so a small business can get good work done without learning a new tool.",
+      "body": [
+        "Most owners we talk to are busy and practical. They have a problem and want it gone. They do not want a long proposal or a meeting about the meeting.",
+        "So we keep it simple. One point of contact. Plain words. A price you can read in ten seconds. You always see the work before it goes anywhere.",
+        "Our guide, Scout, helps you through the steps and answers questions at any hour. Scout is an AI guide, and says so if you ask. The people behind The Agency check the work before you see it."
+      ]
+    },
+    {
+      "slug": "services",
+      "kind": "services",
+      "placement": "nav",
+      "title": "Services",
+      "description": "A website, videos and photos, supplier quotes compared, and help after launch. Pick the problem and we say how we would solve it.",
+      "strip": {
+        "title": "How we price",
+        "lines": [
+          "Priced before we start.",
+          "Explained in plain words.",
+          "Kept economical."
+        ]
+      },
+      "eyebrow": "Services",
+      "headline": "What we can take off your plate.",
+      "lede": "Pick the problem. We will tell you how we would solve it.",
+      "items": [
+        {
+          "title": "A website that works",
+          "text": "A clear site with the pages a customer looks for: what you do, who you are, how to reach you.",
+          "meta": "Pages, text, design"
+        },
+        {
+          "title": "Videos and photos",
+          "text": "Product shots, short clips and edits for your site and social pages, made to a brief you approve.",
+          "meta": "Short, ready to use"
+        },
+        {
+          "title": "Finding a supplier",
+          "text": "We ask for quotes, compare them side by side and tell you which one we would pick.",
+          "meta": "Quotes compared"
+        },
+        {
+          "title": "Keeping it running",
+          "text": "Changes, fixes and updates when your business changes, at a price agreed first.",
+          "meta": "After launch"
+        }
+      ],
+      "closing": {
+        "headline": "Not sure which one you need?",
+        "text": "Describe the problem and we will point you to the right one.",
+        "label": "Ask us",
+        "slug": "contact"
+      }
+    },
+    {
+      "slug": "work",
+      "kind": "work",
+      "placement": "hidden",
+      "title": "Work",
+      "description": "How a project with The Agency usually runs.",
+      "eyebrow": "Work",
+      "headline": "Finished projects will live here.",
+      "lede": "We add a project once the client has approved it and agreed to share it. Until then, this is how a project usually runs.",
+      "itemsTitle": "What a project looks like",
+      "items": [
+        {
+          "title": "A first website",
+          "text": "Five or six pages, written and designed with you, live at an address you own.",
+          "meta": "Typical scope"
+        },
+        {
+          "title": "A launch video",
+          "text": "One short video for your site and social pages, cut to the length you ask for.",
+          "meta": "Typical scope"
+        },
+        {
+          "title": "A supplier search",
+          "text": "A written comparison of quotes with one clear recommendation.",
+          "meta": "Typical scope"
+        }
+      ]
+    },
+    {
+      "slug": "blog",
+      "kind": "blog",
+      "placement": "nav",
+      "title": "Writing",
+      "description": "Short, plain guides for small-business owners: reading a quote and what a website needs.",
+      "eyebrow": "Writing",
+      "headline": "Short guides for owners.",
+      "lede": "Plain answers to questions we hear often."
+    },
+    {
+      "slug": "contact",
+      "kind": "contact",
+      "placement": "nav",
+      "title": "Contact",
+      "description": "Tell The Agency what you need. A few lines is enough.",
+      "eyebrow": "Contact",
+      "headline": "Tell us what you need.",
+      "lede": "A few lines is enough. We will write back with what we would do and what it costs."
+    },
+    {
+      "slug": "privacy",
+      "kind": "text",
+      "placement": "footer",
+      "title": "Privacy",
+      "description": "What The Agency does with the message you send from this site.",
+      "eyebrow": "Privacy",
+      "headline": "What happens to your message.",
+      "lede": "Short and plain.",
+      "body": [
+        "When you use the contact form, your email app opens with your message ready to send. Nothing is sent until you press send in your email app.",
+        "This site does not use cookies, analytics or advertising trackers. It is hosted on GitHub Pages, which keeps standard server logs of visits.",
+        "We use your message only to reply to you. To ask us to delete it, write to hello@moremarginco.com."
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "slug": "reading-a-quote",
+      "title": "How to read a quote in five minutes",
+      "date": "2026-10-12",
+      "summary": "What to look for before you say yes to any quote.",
+      "body": [
+        "A good quote answers four questions. What exactly will I get? When will I get it? What does it cost? What happens if I want a change?",
+        "If any of the four is missing, ask. A person who has done the work before can answer in a sentence.",
+        "Look at what is left out. Photos, text, hosting and later changes are the usual surprises. Ask about each one by name.",
+        "Last, check that the price is fixed or capped. An hourly rate with no limit is a guess, and you carry the risk."
+      ]
+    },
+    {
+      "slug": "what-a-website-needs",
+      "title": "What a small business website actually needs",
+      "date": "2026-10-14",
+      "summary": "Five things a customer looks for, in the order they look.",
+      "body": [
+        "Most visitors arrive with one question: can this business help me? The first screen should answer it in a sentence.",
+        "Next they look for proof. A few real examples, a name, a face, a place. Without them they leave.",
+        "Then they look for the price or at least a range. You do not need exact numbers, but a hint saves both sides time.",
+        "Then how to reach you. Put it in the header and the footer. Make it one click.",
+        "Last, they check that the site works on a phone. Most of them are holding one."
+      ]
+    }
+  ],
+  "ogImage": true
+}

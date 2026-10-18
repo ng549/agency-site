@@ -1,0 +1,17 @@
+0 verbose cli /usr/local/bin/node /usr/local/lib/node_modules/npm/bin/npm-cli.js
+1 info using npm@10.9.9
+2 info using node@v22.23.3
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/sessions/site-live/site/agency/.npmrc
+5 silly config load:file:/usr/local/etc/npmrc
+6 verbose title npm exec astro build --outDir dist
+7 verbose argv "exec" "--yes" "false" "--" "astro" "build" "--outDir" "dist"
+8 verbose logfile logs-max:10 dir:/data/sessions/site-live/site/agency/.npm/_logs/2026-10-18T02_53_36_357Z-
+9 verbose logfile /data/sessions/site-live/site/agency/.npm/_logs/2026-10-18T02_53_36_357Z-debug-0.log
+10 silly logfile done cleaning log files
+11 verbose cwd /data/sessions/site-live/site/agency
+12 verbose os Linux 6.12.105-fly
+13 verbose node v22.23.3
+14 verbose npm  v10.9.9
+15 verbose exit 0
+16 info ok

@@ -1,0 +1,4 @@
+/* The Agency kit: small touches on top of the template. */
+.hero-home h1 { max-width: 14ch; }
+.eyebrow { color: var(--c-accent-text); }
+.card .num { color: var(--c-accent); }

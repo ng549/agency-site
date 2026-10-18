@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.json';
+export function getStaticPaths() {
+  return (site.posts || []).map(p => ({ params: { post: p.slug }, props: { post: p } }));
+}
+const { post } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const date = (() => { try { return new Date(post.date + 'T12:00:00Z').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }); } catch { return post.date; } })();
+const minutes = Math.max(1, Math.round(post.body.join(' ').split(/\s+/).length / 200));
+const contact = site.pages.find(p => p.kind === 'contact' && p.placement !== 'hidden');
+---
+<Base title={post.title} description={post.summary}>
+  <article>
+    <section class="hero hero-post"><div class="wrap">
+      <p class="eyebrow"><a class="tap" href={`${base}/blog/`}>← All writing</a></p>
+      <h1>{post.title}</h1>
+      <p class="muted byline">By {site.name} · {date} · {minutes} min read</p>
+    </div></section>
+    <section class="block"><div class="wrap prose">
+      {post.body.map(p => <p>{p}</p>)}
+    </div></section>
+  </article>
+  {contact && (
+    <section class="closing"><div class="wrap">
+      <h2>Have a question about this?</h2>
+      <p class="lede">Write to us. A few lines is enough.</p>
+      <p class="actions"><a class="btn" href={`${base}/${contact.slug}/`}>Contact us</a></p>
+    </div></section>
+  )}
+</Base>
